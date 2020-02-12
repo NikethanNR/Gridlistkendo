@@ -1,0 +1,34 @@
+<div class="grid">
+        <kendo-grid #grid [data]="view" [height]="800" [pageable]="true" (cancel)="cancelHandler($event)"
+                (save)="saveHandler($event)" (remove)="removeHandler($event)" (add)="addHandler($event)"
+                (edit)="editHandler($event)" [navigable]="true">
+
+                <ng-template kendoGridToolbarTemplate>
+                        <button kendoGridAddCommand primary="true">Add New Customer</button>
+                </ng-template>
+
+                <kendo-grid-column field="CustomerName" title="Customer Name"
+                [headerStyle]="{'background-color': '#666','color': 'white'}">
+                </kendo-grid-column>
+                <kendo-grid-column field="CustomerAddress" title="Customer Address"
+                [headerStyle]="{'background-color': '#666','color': 'white'}">
+                </kendo-grid-column>
+                <kendo-grid-column field="CustomerDOB" editor="date" title="Date of Birth"
+                [headerStyle]="{'background-color': '#666','color': 'white'}">
+                </kendo-grid-column>
+                <kendo-grid-column field="CustomerDepartment" title="Customer Department"
+                [headerStyle]="{'background-color': '#666','color': 'white'}">
+                </kendo-grid-column>
+
+                <kendo-grid-command-column title="Actions" width="300"
+                [headerStyle]="{'background-color': '#666','color': 'white'}"
+                >
+                        <ng-template kendoGridCellTemplate>
+                                <button kendoGridEditCommand primary="true">Edit</button>
+                                <button kendoGridRemoveCommand>Delete</button>
+                                <button kendoGridSaveCommand primary="true">Save</button>
+                                <button kendoGridCancelCommand>Cancel</button>
+                        </ng-template>
+                </kendo-grid-command-column>
+        </kendo-grid>
+</div>
